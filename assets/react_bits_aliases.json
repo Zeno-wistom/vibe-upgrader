@@ -1,0 +1,38 @@
+{
+  "cursor_follow": {
+    "aliases": ["鼠标跟随", "鼠标滑动", "指针", "光标", "cursor follow", "mouse follow", "pointer"],
+    "queries": ["cursor spotlight magnetic mouse follow", "pointer follow spotlight", "magnetic hover cursor"]
+  },
+  "spotlight": {
+    "aliases": ["聚光", "光斑", "spotlight", "reveal", "跟随光"],
+    "queries": ["spotlight reveal mouse", "cursor spotlight hero", "radial reveal spotlight"]
+  },
+  "magnetic": {
+    "aliases": ["磁吸", "吸附", "magnetic", "magnet"],
+    "queries": ["magnetic button hover", "magnetic card interaction", "magnet cursor hover"]
+  },
+  "text_reveal": {
+    "aliases": ["文字动效", "文字揭示", "文字出现", "blur text", "split text", "text reveal"],
+    "queries": ["blur text reveal", "split text animation", "text reveal scroll"]
+  },
+  "liquid_glass": {
+    "aliases": ["液态玻璃", "玻璃拟态", "流体玻璃", "liquid glass", "glassmorphism", "distortion"],
+    "queries": ["liquid glass distortion hero", "glassmorphism fluid reveal", "glass distortion interaction"]
+  },
+  "background_atmosphere": {
+    "aliases": ["高级背景", "背景氛围", "光效", "aurora", "particles", "beams", "waves"],
+    "queries": ["aurora background", "particles background", "animated beams waves"]
+  },
+  "card_tilt": {
+    "aliases": ["卡片悬浮", "倾斜", "tilt", "hover card", "3d card"],
+    "queries": ["tilt card hover", "3d card hover interaction", "card hover transform"]
+  },
+  "object_hero": {
+    "aliases": ["物体", "模型", "视觉中心", "object", "model", "sphere", "orb", "3d hero"],
+    "queries": ["object hero interaction", "orb hero mouse interaction", "3d object reveal"]
+  },
+  "scroll_reveal": {
+    "aliases": ["滚动出现", "滚动揭示", "scroll reveal", "section reveal"],
+    "queries": ["scroll reveal section", "section reveal animation", "scroll text reveal"]
+  }
+}

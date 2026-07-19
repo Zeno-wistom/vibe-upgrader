@@ -1,0 +1,6 @@
+interface:
+  display_name: "Vibe Upgrader"
+  short_description: "Prototype-first UI/UX and visual upgrades."
+  default_prompt: "Use $vibe-upgrader to classify this frontend upgrade as standard or experimental, and prototype experimental visual mechanisms before integration."
+policy:
+  allow_implicit_invocation: false

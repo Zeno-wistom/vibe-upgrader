@@ -1,0 +1,42 @@
+{
+  "vibe_keywords": {
+    "premium": ["高级感", "高级", "精致", "质感", "贵气", "premium", "refined", "polished", "high-end", "luxury"],
+    "tech": ["科技感", "科技", "未来感", "赛博", "tech", "futuristic", "cyber", "neural", "ai-native"],
+    "glass": ["液态玻璃", "玻璃拟态", "玻璃", "liquid glass", "glassmorphism", "glass", "frosted", "translucent"],
+    "apple": ["苹果感", "apple-like", "minimal", "editorial", "clean", "calm"],
+    "motion": ["动效", "动画", "丝滑", "运动", "motion", "animation", "animated", "smooth", "fluid"],
+    "smooth": ["丝滑", "流畅", "顺滑", "smooth", "fluid", "buttery", "seamless"],
+    "background": ["背景", "氛围", "光效", "高级背景", "background", "atmosphere", "ambient", "gradient"],
+    "hero": ["首屏", "首页", "hero", "above the fold"],
+    "card": ["卡片", "card", "cards", "panel", "tile"],
+    "bento": ["Bento", "bento", "bento grid", "模块网格", "错落网格"],
+    "workspace": ["工作台", "workspace", "workbench", "command center", "desk"],
+    "saas": ["SaaS", "AI SaaS", "AI product", "dashboard", "workflow", "automation"],
+    "portfolio": ["作品集", "portfolio", "creator", "designer"],
+    "plugin": ["插件", "插件展示页", "plugin showcase", "extension", "plugin", "add-on"],
+    "agency": ["agency", "studio", "工作室", "设计机构"],
+    "landing": ["landing page", "落地页", "官网", "产品页"],
+    "interaction": ["交互", "反馈", "鼠标", "鼠标跟随", "hover", "cursor", "click", "micro-interaction"],
+    "layout": ["布局", "层次", "版式", "layout", "composition", "grid", "bento"]
+  },
+  "page_modules": {
+    "hero": ["hero", "首屏", "首页", "头图", "above the fold"],
+    "landing_page": ["landing page", "landing", "落地页", "官网", "产品页", "首页"],
+    "features": ["features", "feature", "功能", "卖点"],
+    "pricing": ["pricing", "价格", "套餐"],
+    "cta": ["cta", "call to action", "转化"],
+    "footer": ["footer", "页脚"],
+    "about": ["about", "关于"],
+    "portfolio": ["portfolio", "作品集"],
+    "dashboard": ["dashboard", "仪表盘"],
+    "background": ["background", "背景", "氛围"],
+    "gradient": ["gradient", "渐变"],
+    "component": ["component", "组件", "card", "卡片"]
+  },
+  "tools": {
+    "codex": ["codex"],
+    "v0": ["v0", "vercel v0"],
+    "cursor": ["cursor"],
+    "claude_code": ["claude code", "claude"]
+  }
+}

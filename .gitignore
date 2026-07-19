@@ -1,0 +1,27 @@
+# Secrets and local configuration
+.env
+.env.*
+*.local
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local outputs and rollback material
+output/
+install-backups/
+*.tmp
+*.bak
+
+# Public-distribution boundary
+assets/enriched_cleaned_motionsites_prompts.jsonl
+docs/media/*.webm
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
