@@ -9,7 +9,11 @@ from typing import Any
 SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(SCRIPTS_DIR))
 
+import search_motionsites  # noqa: E402
 from search_motionsites import search  # noqa: E402
+
+
+FIXTURE_DATA_PATH = Path(__file__).resolve().parent / "fixtures" / "motionsites_synthetic_fixture.jsonl"
 
 
 def rejected_expressive_candidate() -> dict[str, Any]:
@@ -36,6 +40,15 @@ def rejected_expressive_candidate() -> dict[str, Any]:
 
 
 class WorkflowTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.original_data_path = search_motionsites.DATA_PATH
+        search_motionsites.DATA_PATH = FIXTURE_DATA_PATH
+
+    @classmethod
+    def tearDownClass(cls) -> None:
+        search_motionsites.DATA_PATH = cls.original_data_path
+
     def test_standard_settings_skips_creative_sources_and_prototype(self) -> None:
         result = search(
             "请帮我修改设置页的表单层级、按钮优先级和保存反馈",
