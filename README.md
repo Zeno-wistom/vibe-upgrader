@@ -2,61 +2,90 @@
 
 # Vibe-Upgrader
 
-**A UI/UX, visual, and interaction upgrade Skill for real frontend projects — controlled by default, experimental only behind an isolated prototype and a human gate.**
+**面向真实前端项目的 UI/UX、视觉与交互升级 Skill：默认克制；需要强视觉时，先做隔离原型，再经过人工门禁。**
 
-[Showcase](https://vibe-upgrader-showcase.vercel.app/) · [Real-world case](https://vibe-upgrader-aigc-case.vercel.app/) · [简体中文](./README.zh-CN.md)
+[简体中文](./README.md) · [English](./README.en.md)
 
 ![Version](https://img.shields.io/badge/version-1.0.0-11110f?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-c8ff4d?style=flat-square&labelColor=11110f)
 
-![Vibe-Upgrader showcase](./docs/media/hero.png)
+[在线 Showcase](https://vibe-upgrader-showcase.vercel.app/) · [AIGC 真实案例](https://vibe-upgrader-aigc-case.vercel.app/) · [GitHub Release](https://github.com/Zeno-wistom/vibe-upgrader/releases/tag/v1.0.0) · [English README](./README.en.md)
 
 </div>
 
-## What it does
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://vibe-upgrader-showcase.vercel.app/">
+        <img src="./docs/media/showcase_readme_cover.png" alt="Vibe-Upgrader 交互式 Showcase">
+      </a>
+      <br>
+      <strong>交互式 Showcase</strong><br>
+      <sub>亲手体验升级前后对比、双轨决策与机制实验室</sub>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://vibe-upgrader-aigc-case.vercel.app/">
+        <img src="./docs/media/aigc_readme_cover.png" alt="Vibe-Upgrader AIGC 真实项目案例">
+      </a>
+      <br>
+      <strong>AIGC 真实项目案例</strong><br>
+      <sub>在既有内容与约束中完成产品化升级</sub>
+    </td>
+  </tr>
+</table>
 
-Vibe-Upgrader upgrades existing frontend products without treating every request as permission to redesign the whole site. It begins with the real project, the requested surface, and the user's constraints, then chooses one of two tracks:
+## 它解决什么问题
 
-- **Standard** for focused improvements to hierarchy, usability, content, controls, responsive behavior, and brand polish.
-- **Experimental** for high-impact motion or non-standard interaction, built first as one isolated prototype that cannot enter the product until a human approves it.
+Vibe-Upgrader 用于升级已经存在的前端产品。它先理解真实项目、修改范围和用户约束，再决定是直接做一次稳妥的局部提升，还是先隔离验证一个更大胆的视觉机制。它不会把每个需求都理解成“重做整站”，也不会为了炫技堆叠无关组件。
 
-When creative reference is genuinely useful, the Skill can retrieve mechanisms, evaluate expressive component candidates, reject poor fits, and produce an equivalent custom fallback. External availability never becomes an excuse for a generic result.
+## 三步开始
 
-## Quick start
+### 1. Clone
 
-Install from the public repository into a clean Skills directory:
+把 Skill 克隆到 Codex Skills 目录：
 
 ```bash
 git clone https://github.com/Zeno-wistom/vibe-upgrader.git ~/.codex/skills/vibe-upgrader
 ```
 
-Then invoke it explicitly in a compatible agent:
+### 2. Invoke
+
+在兼容 Skills 的 Agent 中显式调用：
 
 ```text
 $vibe-upgrader
 ```
 
-Vibe-Upgrader is explicit-only. Installing it does not allow it to intervene in every frontend task.
+### 3. Describe the upgrade
 
-> The public repository intentionally does not bundle the complete local MotionSites corpus. Its public redistribution terms could not be confirmed. The Skill remains usable without that corpus: it reports the missing optional data source and continues with component evaluation or a custom fallback.
+说明要改的页面、范围、必须保留的内容和验收标准：
 
-## Two tracks
+```text
+优化这个后台的搜索、筛选和批量操作区域。
+保留其余页面，不要重做整个产品。
+```
 
-| Standard | Experimental |
-| --- | --- |
-| Focused UI/UX upgrades in real products | Strong visual direction or non-standard interaction |
-| Implemented directly inside a controlled scope | Built first as one isolated prototype |
-| No unrelated creative search | Retrieves only the references needed for one mechanism |
-| No visual approval gate required | Never integrated before human approval |
+Vibe-Upgrader 只允许显式调用；安装后不会自动介入其他前端任务。
 
-## How to use it
+> 公共仓库不包含完整的本地 MotionSites 语料库，因为其批量再分发授权无法确认。缺少这个可选数据源时，Skill 会说明限制，并继续使用组件评估或定制回退。
+
+## Standard 与 Experimental
+
+| | Standard | Experimental |
+| --- | --- | --- |
+| 适合 | 真实产品中的局部 UI/UX 升级 | 强视觉方向或非标准交互探索 |
+| 实施方式 | 在受控范围内直接修改 | 先制作一个隔离原型 |
+| 创意检索 | 不做与任务无关的检索 | 只找完成一个机制所需的参考 |
+| 人工门禁 | 通常不需要视觉批准 | 未经明确批准不得整合 |
+
+## 两个真实 Prompt 示例
 
 ### Standard
 
 ```text
 $vibe-upgrader
 
-Upgrade the search, filtering, and bulk-action area of this dashboard.
-Keep the rest of the page stable and do not redesign the whole product.
+升级这个仪表盘的搜索、筛选和批量操作区域。
+保持其余页面稳定，不要重做整个产品。
 ```
 
 ### Experimental
@@ -64,96 +93,90 @@ Keep the rest of the page stable and do not redesign the whole product.
 ```text
 $vibe-upgrader
 
-Explore a more immersive way to browse this digital archive.
-Build the visual direction in an isolated preview and do not integrate it
-until I approve it.
+探索一种更沉浸的数字档案浏览方式。
+先在隔离预览中完成视觉方向，未经我批准不要整合。
 ```
 
-## How it works
+## 工作流程
 
 ```mermaid
 flowchart LR
-    A[User request] --> B{Track decision}
-    B --> C[Retrieval and component evaluation]
-    C --> D[Adopt, reject, or custom fallback]
-    D --> E[Implementation or isolated prototype]
-    E --> F[Verification]
-    F --> G{Human gate required?}
-    G -->|No| H[Deliver scoped upgrade]
-    G -->|Yes, approved| I[Integrate deliberately]
-    G -->|Yes, not approved| J[Keep production unchanged]
+    A[用户请求] --> B{选择轨道}
+    B --> C[诊断真实项目]
+    C --> D[评估参考与组件]
+    D --> E[采用、拒绝或定制回退]
+    E --> F[正式修改或隔离原型]
+    F --> G[验证]
+    G --> H{需要人工门禁?}
+    H -->|否| I[交付受控升级]
+    H -->|是且已批准| J[谨慎整合]
+    H -->|是但未批准| K[保持正式产品不变]
 ```
 
-The formal `decision_task` 3.0 keeps permission mode, upgrade track, source provenance, component decisions, prototype status, and verification boundaries explicit.
+正式协议 `decision_task` 3.0 会记录权限模式、升级轨道、来源依据、组件决策、原型状态和验证边界。
 
-## Showcase
+## 在线 Showcase
 
-[Open the live showcase →](https://vibe-upgrader-showcase.vercel.app/)
+[打开在线 Showcase →](https://vibe-upgrader-showcase.vercel.app/)
 
-![Showcase desktop](./docs/media/showcase_desktop.png)
+Showcase 把流程做成了可操作体验：升级前后拖拽对比、Standard / Experimental 双轨控制台、可拖动的决策流程，以及一个小型机制实验室。
 
-![Interactive before-and-after comparison](./docs/media/showcase_interaction.gif)
+![升级前后交互对比](./docs/media/showcase_interaction.gif)
 
-The showcase turns the workflow into a hands-on story: a before/after scrubber, a Standard/Experimental track console, a draggable decision sequence, and a small mechanism lab. MotionSites was used for mechanism-level reference rather than page copying. `BlurText` informed a lightweight native reveal; `SpotlightCard`, `ScrollStack`, and `TiltedCard` were rejected where they competed with the task, and the final spatial response was built as a custom mechanism.
+MotionSites 只用于机制级参考，没有复制页面。`BlurText` 启发了轻量原生显现；`SpotlightCard`、`ScrollStack` 和 `TiltedCard` 因为与任务冲突而被拒绝，最终的空间响应由定制机制完成。
 
 <details>
-<summary>Mobile preview</summary>
+<summary>查看桌面端与移动端静态截图</summary>
 
-![Showcase mobile](./docs/media/showcase_mobile.png)
+![Showcase 桌面端](./docs/media/showcase_desktop.png)
+
+![Showcase 移动端](./docs/media/showcase_mobile.png)
 
 </details>
 
-## Real-world case
+## AIGC 真实项目案例
 
-[Open PINK SIGNALS →](https://vibe-upgrader-aigc-case.vercel.app/)
+[打开 PINK SIGNALS →](https://vibe-upgrader-aigc-case.vercel.app/)
 
-![PINK SIGNALS real-world case](./docs/media/aigc_case_desktop.png)
+PINK SIGNALS 是一个已经存在的项目，拥有七张完成作品、既定视觉系统和严格内容约束。Vibe-Upgrader 保留了作品与声明，重点改善作品浏览、全屏详情切换、视觉层级、响应式体验和隔离式 Signal 体验，而不是从零重做。
 
-PINK SIGNALS was an existing project with seven finished artworks, an established visual identity, and strict content constraints. Vibe-Upgrader did not rebuild it from scratch. It preserved the artwork and disclosure language while improving portfolio browsing, full-screen detail navigation, visual hierarchy, responsive behavior, and the isolated Signal experience.
+案例中的人物、场景和类似资料卡的内容均为 AIGC 虚构生成，不对应真实人物，也不构成真实交友资料。
 
-All people, scenes, and profile-like material in this case are fictional AIGC-generated content. They do not depict real individuals or real dating profiles.
+## 约束与护栏
 
-## Guardrails
+- 默认不重做全站。
+- 不为炫技堆叠组件。
+- Experimental 未经人工批准不得整合到正式页面。
+- 外部组件不可用或被拒绝时，不降低质量目标。
+- 运行时不修改正式安装的 Skill 目录。
+- 用户约束和已经核实的项目事实优先。
 
-- No whole-site redesign by default.
-- No component stacking for spectacle alone.
-- No Experimental integration before explicit human approval.
-- No quality downgrade when an external component is unavailable or rejected.
-- No runtime mutation of the installed Skill directory.
-- User constraints and verified project facts take priority.
-
-## Repository structure
+## 仓库结构
 
 ```text
 vibe-upgrader/
-├── SKILL.md          # Skill entry point and track routing
-├── agents/           # Agent-facing metadata
-├── scripts/          # Decision, retrieval, installation, and search helpers
-├── references/       # Protocol and verification guidance
-├── assets/           # Redistributable aliases only; local corpus excluded
-├── tests/            # Workflow and runtime-write regressions
-└── docs/media/       # Optimized README media
+├── SKILL.md          # Skill 入口与双轨路由
+├── agents/           # Agent 元数据
+├── scripts/          # 决策、检索、安装与搜索辅助脚本
+├── references/       # 协议与验证说明
+├── assets/           # 可公开的别名数据；本地语料已排除
+├── tests/            # 工作流与运行时写入回归测试
+└── docs/media/       # README 媒体素材
 ```
 
-Release documentation, the license, and the changelog live at the repository root.
+## 环境与兼容性
 
-## Requirements and compatibility
+- Codex 或其他支持 Skills 与显式调用的 Agent 环境。
+- 可选辅助脚本和验证工具需要 Python **3.10+**。
+- 核心 Skill 不需要 Node.js；只有用户选择兼容的组件 CLI 或 Registry 检索时才会使用。
+- 开发证据中的 Windows 路径不是安装要求；公共仓库使用可移植的相对路径。
 
-- Codex or another agent environment that supports Skills and explicit invocation.
-- Python **3.10+** for the optional helper scripts and validation utilities.
-- Node.js is not required for the core Skill. It is used only when an opted-in component search needs a compatible CLI or registry workflow.
-- Windows paths in development evidence are not installation requirements; the repository uses portable relative paths.
+## License 与第三方边界
 
-## License and acknowledgements
+Vibe-Upgrader 自有代码与文档使用 [MIT License](./LICENSE)。
 
-Vibe-Upgrader's original code and documentation are released under the [MIT License](./LICENSE).
+- [MotionSites](https://motionsites.ai/) 是外部创意参考来源。完整本地语料库不包含在公共仓库中。
+- [React Bits](https://github.com/DavidHDev/react-bits) 是可选组件候选来源。仓库不打包其组件源码；React Bits 使用自己的 MIT + Commons Clause 条款。
+- Showcase 与 AIGC 案例是独立项目，各自保留依赖与素材来源边界。
 
-Third-party resources, component implementations, website references, screenshots, and datasets are not automatically covered by that license:
-
-- [MotionSites](https://motionsites.ai/) is an external creative-reference source. The complete locally collected corpus is **not included** because public bulk-redistribution permission could not be confirmed.
-- [React Bits](https://github.com/DavidHDev/react-bits) is evaluated as an optional component source. Vibe-Upgrader bundles no React Bits component source; React Bits uses its own MIT + Commons Clause terms.
-- The showcase and real-world case remain separate projects with their own dependencies and asset provenance.
-
-## Release
-
-See [CHANGELOG.md](./CHANGELOG.md) and the [v1.0.0 release](https://github.com/Zeno-wistom/vibe-upgrader/releases/tag/v1.0.0).
+版本记录见 [CHANGELOG.md](./CHANGELOG.md) 和 [v1.0.0 Release](https://github.com/Zeno-wistom/vibe-upgrader/releases/tag/v1.0.0)。
