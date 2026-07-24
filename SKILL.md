@@ -1,6 +1,6 @@
 ---
 name: vibe-upgrader
-description: "Upgrade real frontend projects through one of two explicit tracks: standard UI/UX improvement for hierarchy, usability, content, controls, and brand polish; or experimental visual work for immersive, high-impact, signature motion and non-standard interaction. Use only when the user explicitly invokes $vibe-upgrader or explicitly requests its full workflow. Preserve project facts and permission boundaries, prototype experimental mechanisms before integration, and use MotionSites, React Bits, foundation UI, existing assets, or custom work only when their responsibility fits the task."
+description: "Upgrade real frontend projects through one of two explicit tracks: standard UI/UX improvement for hierarchy, usability, content, controls, and brand polish; or experimental visual work for immersive, high-impact, signature motion and non-standard interaction. Use only when the user explicitly invokes this skill (for example, `$vibe-upgrader` in Codex or `/vibe-upgrader` in Claude Code) or explicitly requests its full workflow. Preserve project facts and permission boundaries, prototype experimental mechanisms before integration, and use MotionSites, React Bits, foundation UI, existing assets, or custom work only when their responsibility fits the task."
 ---
 
 # Vibe Upgrader
