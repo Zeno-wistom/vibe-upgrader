@@ -2,7 +2,9 @@
 
 # Vibe-Upgrader
 
-**A UI/UX, visual, and interaction upgrade Skill for real frontend projects—controlled by default, experimental only behind an isolated prototype and a human gate.**
+**Make real frontend projects clearer, smoother, and more memorable.**
+
+A Codex Skill for upgrading UI/UX, visual hierarchy, user flows, interaction feedback, and motion language.
 
 [简体中文](./README.md) · [English](./README.en.md)
 
@@ -12,6 +14,8 @@
 
 </div>
 
+**Quick navigation:** [Start in three steps](#start-in-three-steps) · [Upgrade capabilities](#what-it-can-upgrade) · [Choose a track](#standard-and-experimental) · [Request template](#3-describe-the-upgrade) · [See real results](#see-real-results)
+
 <table>
   <tr>
     <td width="50%" align="center">
@@ -20,7 +24,7 @@
       </a>
       <br>
       <strong>Interactive Showcase</strong><br>
-      <sub>Try the before/after comparison, track decision, and mechanism lab</sub>
+      <sub>Understand what it upgrades, which track to choose, and how to start</sub>
     </td>
     <td width="50%" align="center">
       <a href="https://vibe-upgrader-aigc-case.vercel.app/">
@@ -28,56 +32,117 @@
       </a>
       <br>
       <strong>Real-world AIGC Case</strong><br>
-      <sub>A product upgrade delivered inside existing content and constraints</sub>
+      <sub>A product upgrade delivered inside existing content, brand, and constraints</sub>
     </td>
   </tr>
 </table>
 
-## What it does
+## Understand it in 5 seconds
 
-Vibe-Upgrader upgrades existing frontend products. It begins with the real project, requested surface, and user constraints, then decides whether to deliver a controlled in-place improvement or isolate a bolder visual mechanism for approval. It does not interpret every request as permission to redesign the whole site or stack unrelated components for spectacle.
+Vibe-Upgrader is built for **frontend projects that already exist**. It first understands the page, goal, scope, and content that must stay, then chooses the right upgrade track and delivers a verifiable result.
+
+| Your question | Answer |
+| --- | --- |
+| What is it? | An explicitly invoked Codex Skill, not a website template or component pack. |
+| What can it upgrade? | Information hierarchy, user flows, state feedback, motion language, responsive behavior, and brand expression. |
+| Will it redesign the whole site? | Standard makes controlled changes in the real product; bolder directions begin as an isolated Experimental prototype. |
+| How do I start? | Clone the Skill, invoke `$vibe-upgrader`, and describe the page, scope, preserved content, and acceptance criteria. |
+
+## What it can upgrade
+
+| Capability | Common problem | Delivered result |
+| --- | --- | --- |
+| Information hierarchy | Everything has similar weight, so users do not know where to look first | A clear reading order across the primary task, key data, and supporting information |
+| User flow | Frequent tasks require too many steps or have scattered entry points | Fewer steps, a stronger primary action, and a visible next move |
+| State feedback | Clicks have no loading, success, failure, or next-step feedback | A complete state chain from action to processing, completion, and continuation |
+| Motion language | Animation decorates the page without explaining change | Motion that clarifies state, spatial relationships, and outcomes |
+| Responsive and brand | Density breaks across viewports and the interface feels inconsistent | Unified layout, components, rhythm, and brand expression with multi-viewport verification |
 
 ## Start in three steps
 
-### 1. Clone
+### 1. Clone the Skill
 
-Clone the Skill into your Codex Skills directory:
+macOS / Linux:
 
 ```bash
 git clone https://github.com/Zeno-wistom/vibe-upgrader.git ~/.codex/skills/vibe-upgrader
 ```
 
-### 2. Invoke
+Windows PowerShell:
 
-Call it explicitly in an Agent that supports Skills:
+```powershell
+git clone https://github.com/Zeno-wistom/vibe-upgrader.git "$env:USERPROFILE\.codex\skills\vibe-upgrader"
+```
+
+### 2. Invoke it explicitly
+
+In an Agent environment that supports Skills, enter:
 
 ```text
 $vibe-upgrader
 ```
 
+Installing the Skill does not allow it to intervene in unrelated frontend work. The full workflow starts only when explicitly invoked.
+
 ### 3. Describe the upgrade
 
-Name the target surface, scope, content that must stay, and acceptance criteria:
+Use these five fields for a more reliable result:
 
 ```text
-Upgrade the search, filtering, and bulk-action area of this dashboard.
-Keep the rest of the page stable and do not redesign the whole product.
+$vibe-upgrader
+
+Page: the page or area to upgrade
+Goal: the task users struggle to complete
+Scope: what may change in this iteration
+Preserve: content, logic, brand, or components that must stay
+Acceptance: how the finished upgrade will be judged
 ```
 
-Vibe-Upgrader is explicit-only. Installing it does not allow it to intervene in unrelated frontend tasks.
+For example:
 
-> The public repository intentionally excludes the complete local MotionSites corpus because its bulk-redistribution terms could not be confirmed. Without that optional source, the Skill reports the limitation and continues with component evaluation or a custom fallback.
+```text
+$vibe-upgrader
+
+Page: search, filtering, and bulk actions in the dashboard
+Goal: help users find target records and process them faster
+Scope: change only the list toolbar and its related feedback
+Preserve: the current data model, list, and permission logic
+Acceptance: clear desktop and mobile flows, keyboard access, passing build, and a clean console
+```
+
+> [!TIP]
+> If you are unsure which track to choose, describe the real goal and constraints. Vibe-Upgrader defaults to Standard and enters Experimental only when the task clearly requires a strong visual direction or non-standard interaction.
+
+<details>
+<summary><strong>Update an existing installation</strong></summary>
+
+macOS / Linux:
+
+```bash
+git -C ~/.codex/skills/vibe-upgrader pull --ff-only
+```
+
+Windows PowerShell:
+
+```powershell
+git -C "$env:USERPROFILE\.codex\skills\vibe-upgrader" pull --ff-only
+```
+
+</details>
 
 ## Standard and Experimental
 
 | | Standard | Experimental |
 | --- | --- | --- |
-| Best for | Focused UI/UX upgrades in real products | Strong visual direction or non-standard interaction |
-| Delivery | Implemented directly inside a controlled scope | Built first as one isolated prototype |
-| Creative search | No unrelated reference search | Only the references needed for one mechanism |
-| Human gate | Usually no visual approval gate | Never integrated before explicit approval |
+| Best for | Dashboards, tools, content products, and existing business surfaces | Brand heroes, narrative pages, and non-standard interaction |
+| Approach | Preserve the architecture and solve the most important experience problems | Validate one strong mechanism in an isolated environment |
+| Delivery | Implement and verify directly inside a controlled scope | Deliver one runnable prototype first |
+| Boundary | Stop when the task acceptance criteria are met | Integrate only after an `approved / revise_once / rejected` human gate |
 
-## Two real prompt examples
+**Selection rule:** use Standard for real product work; use Experimental when the visual direction itself must be proven before integration.
+
+<details>
+<summary><strong>View two copy-ready prompts</strong></summary>
 
 ### Standard
 
@@ -86,6 +151,7 @@ $vibe-upgrader
 
 Upgrade the search, filtering, and bulk-action area of this dashboard.
 Keep the rest of the page stable and do not redesign the whole product.
+Verify desktop, mobile, keyboard operation, and the browser console.
 ```
 
 ### Experimental
@@ -94,37 +160,42 @@ Keep the rest of the page stable and do not redesign the whole product.
 $vibe-upgrader
 
 Explore a more immersive way to browse this digital archive.
-Build the visual direction in an isolated preview and do not integrate it
-until I approve it.
+Build one core interaction mechanism in an isolated preview.
+Do not integrate it into the production page until I approve it.
 ```
 
-## Workflow
+</details>
+
+## How it works
 
 ```mermaid
 flowchart LR
-    A[User request] --> B{Choose a track}
-    B --> C[Diagnose the real project]
-    C --> D[Evaluate references and components]
-    D --> E[Adopt, reject, or build a custom fallback]
-    E --> F[In-place upgrade or isolated prototype]
-    F --> G[Verification]
-    G --> H{Human gate required?}
-    H -->|No| I[Deliver scoped upgrade]
-    H -->|Yes, approved| J[Integrate deliberately]
-    H -->|Yes, not approved| K[Keep production unchanged]
+    A["1. Understand the page"] --> B{"2. Choose a track"}
+    B -->|Standard| C["3. Controlled implementation"]
+    B -->|Experimental| D["3. Isolated prototype"]
+    C --> E["4. Verify and deliver"]
+    D --> F{"Human visual gate"}
+    F -->|approved| E
+    F -->|revise_once| D
+    F -->|rejected| G["Keep production unchanged"]
 ```
 
-The formal `decision_task` 3.0 records permission mode, upgrade track, provenance, component decisions, prototype status, and verification boundaries.
+The formal `decision_task` 3.0 records permission mode, upgrade track, provenance, component decisions, prototype status, and verification boundaries. It makes the reasoning, implementation scope, and evidence inspectable instead of leaving only a page that looks different.
 
-## Live Showcase
+## See real results
+
+### Interactive Showcase
 
 [Open the live Showcase →](https://vibe-upgrader-showcase.vercel.app/)
 
-The Showcase turns the workflow into a hands-on story: a before/after scrubber, a Standard / Experimental track console, a draggable decision sequence, and a small mechanism lab.
+The Showcase uses hands-on demonstrations to explain four things:
 
-![Interactive before-and-after comparison](./docs/media/showcase_interaction.gif)
+1. What changes in the same product before and after an upgrade;
+2. How information hierarchy, user flow, state feedback, and motion language differ;
+3. When to choose Standard or Experimental;
+4. How a real request becomes a verifiable delivery.
 
-MotionSites was used for mechanism-level reference rather than page copying. `BlurText` informed a lightweight native reveal; `SpotlightCard`, `ScrollStack`, and `TiltedCard` were rejected where they competed with the task, and the final spatial response was built as a custom mechanism.
+![Drag to compare the interface before and after the upgrade](./docs/media/showcase_interaction.gif)
 
 <details>
 <summary>View desktop and mobile screenshots</summary>
@@ -135,22 +206,22 @@ MotionSites was used for mechanism-level reference rather than page copying. `Bl
 
 </details>
 
-## Real-world AIGC case
+### Real-world AIGC case
 
 [Open PINK SIGNALS →](https://vibe-upgrader-aigc-case.vercel.app/)
 
-PINK SIGNALS was an existing project with seven finished artworks, an established visual identity, and strict content constraints. Vibe-Upgrader preserved the artwork and disclosure language while improving portfolio browsing, full-screen detail navigation, visual hierarchy, responsive behavior, and the isolated Signal experience instead of rebuilding the project from scratch.
+PINK SIGNALS already had seven finished artworks, an established visual identity, and strict content constraints. Vibe-Upgrader preserved the work and disclosure language while improving portfolio browsing, full-screen detail navigation, visual hierarchy, responsive behavior, and the isolated Signal experience.
 
 All people, scenes, and profile-like material in this case are fictional AIGC-generated content. They do not depict real individuals or real dating profiles.
 
 ## Guardrails
 
-- No whole-site redesign by default.
-- No component stacking for spectacle alone.
-- No Experimental integration before explicit human approval.
-- No quality downgrade when an external component is unavailable or rejected.
-- No runtime mutation of the installed Skill directory.
-- User constraints and verified project facts take priority.
+- User authorization and verified project facts define the modification scope.
+- Standard keeps real business behavior and the existing architecture stable.
+- Experimental begins with an isolated prototype and a human visual gate.
+- External references and components require provenance, a fit decision, and a fallback.
+- Runtime use leaves the installed Skill directory unchanged.
+- A passing build proves that the project runs; real reading and human judgment still determine visual quality.
 
 ## Repository structure
 
@@ -159,7 +230,7 @@ vibe-upgrader/
 ├── SKILL.md          # Skill entry point and track routing
 ├── agents/           # Agent-facing metadata
 ├── scripts/          # Decision, retrieval, installation, and search helpers
-├── references/       # Protocol and verification guidance
+├── references/       # Protocol, provenance boundaries, and verification guidance
 ├── assets/           # Redistributable aliases only; local corpus excluded
 ├── tests/            # Workflow and runtime-write regressions
 └── docs/media/       # README media
@@ -168,16 +239,17 @@ vibe-upgrader/
 ## Requirements and compatibility
 
 - Codex or another Agent environment that supports Skills and explicit invocation.
-- Python **3.10+** for optional helper scripts and validation utilities.
-- Node.js is not required for the core Skill. It is used only for an opted-in compatible component CLI or Registry workflow.
-- Windows paths in development evidence are not installation requirements; the repository uses portable relative paths.
+- The core Skill does not require Node.js.
+- Python **3.10+** is required for optional helper scripts and validation tools.
+- Node.js is used only when the user opts into a compatible component CLI or Registry workflow.
+- Windows, macOS, and Linux use portable repository-relative paths.
 
 ## License and third-party boundaries
 
 Vibe-Upgrader's original code and documentation are released under the [MIT License](./LICENSE).
 
-- [MotionSites](https://motionsites.ai/) is an external creative-reference source. The complete local corpus is not included in the public repository.
+- [MotionSites](https://motionsites.ai/) is an external creative-reference source. The complete local corpus is not included because bulk-redistribution authorization could not be confirmed. Without that optional source, the Skill reports the limitation and continues with component evaluation or a custom fallback.
 - [React Bits](https://github.com/DavidHDev/react-bits) is an optional component source. This repository bundles no React Bits component source; React Bits uses its own MIT + Commons Clause terms.
-- The Showcase and real-world case are separate projects with their own dependencies and asset provenance.
+- The Showcase and AIGC case are separate projects with their own dependency and asset-provenance boundaries.
 
 See [CHANGELOG.md](./CHANGELOG.md) and the [v1.0.0 Release](https://github.com/Zeno-wistom/vibe-upgrader/releases/tag/v1.0.0).
