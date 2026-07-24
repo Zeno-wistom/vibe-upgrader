@@ -4,13 +4,13 @@
 
 **Make real frontend projects clearer, smoother, and more memorable.**
 
-A Codex Skill for upgrading UI/UX, visual hierarchy, user flows, interaction feedback, and motion language.
+An Agent Skill for upgrading UI/UX, visual hierarchy, user flows, interaction feedback, and motion language.
 
 [简体中文](./README.md) · [English](./README.en.md)
 
 ![Version](https://img.shields.io/badge/version-1.0.0-11110f?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-c8ff4d?style=flat-square&labelColor=11110f)
 
-[Live Showcase](https://vibe-upgrader-showcase.vercel.app/) · [Real-world AIGC case](https://vibe-upgrader-aigc-case.vercel.app/) · [GitHub Release](https://github.com/Zeno-wistom/vibe-upgrader/releases/tag/v1.0.0) · [简体中文 README](./README.md)
+[Live Showcase](https://vibe-upgrader-showcase.vercel.app/) · [Real-world AIGC case](https://vibe-upgrader-aigc-case.vercel.app/)
 
 </div>
 
@@ -20,7 +20,7 @@ A Codex Skill for upgrading UI/UX, visual hierarchy, user flows, interaction fee
   <tr>
     <td width="50%" align="center">
       <a href="https://vibe-upgrader-showcase.vercel.app/">
-        <img src="./docs/media/showcase_readme_cover.png" alt="Vibe-Upgrader interactive Showcase">
+        <img src="./docs/media/showcase_readme_cover.png?v=20260724" alt="Vibe-Upgrader interactive Showcase">
       </a>
       <br>
       <strong>Interactive Showcase</strong><br>
@@ -43,8 +43,9 @@ Vibe-Upgrader is built for **frontend projects that already exist**. It first un
 
 | Your question | Answer |
 | --- | --- |
-| What is it? | An explicitly invoked Codex Skill, not a website template or component pack. |
+| What is it? | A portable, explicitly invoked Skill that follows the open Agent Skills format, not a website template or component pack. |
 | What can it upgrade? | Information hierarchy, user flows, state feedback, motion language, responsive behavior, and brand expression. |
+| Which Agents are supported? | Codex, Claude Code, and other clients that implement Agent Skills or can load `SKILL.md`. |
 | Will it redesign the whole site? | Standard makes controlled changes in the real product; bolder directions begin as an isolated Experimental prototype. |
 | How do I start? | Clone the Skill, invoke `$vibe-upgrader`, and describe the page, scope, preserved content, and acceptance criteria. |
 
@@ -60,33 +61,55 @@ Vibe-Upgrader is built for **frontend projects that already exist**. It first un
 
 ## Start in three steps
 
-### 1. Clone the Skill
+### 1. Install it in your Agent's Skills directory
+
+Vibe-Upgrader's core follows the open [Agent Skills specification](https://agentskills.io/specification). Each client uses its own directory:
+
+| Agent | User-level directory | Project-level directory | Explicit invocation |
+| --- | --- | --- | --- |
+| Codex | `~/.agents/skills/vibe-upgrader` | `.agents/skills/vibe-upgrader` | `$vibe-upgrader` |
+| Claude Code | `~/.claude/skills/vibe-upgrader` | `.claude/skills/vibe-upgrader` | `/vibe-upgrader` |
 
 macOS / Linux:
 
 ```bash
-git clone https://github.com/Zeno-wistom/vibe-upgrader.git ~/.codex/skills/vibe-upgrader
+# Codex
+git clone https://github.com/Zeno-wistom/vibe-upgrader.git ~/.agents/skills/vibe-upgrader
+
+# Claude Code
+git clone https://github.com/Zeno-wistom/vibe-upgrader.git ~/.claude/skills/vibe-upgrader
 ```
 
-Windows PowerShell:
+Windows PowerShell：
 
 ```powershell
-git clone https://github.com/Zeno-wistom/vibe-upgrader.git "$env:USERPROFILE\.codex\skills\vibe-upgrader"
+# Codex
+git clone https://github.com/Zeno-wistom/vibe-upgrader.git "$env:USERPROFILE\.agents\skills\vibe-upgrader"
+
+# Claude Code
+git clone https://github.com/Zeno-wistom/vibe-upgrader.git "$env:USERPROFILE\.claude\skills\vibe-upgrader"
 ```
+
+For other clients, use their documented Agent Skills directory and invocation syntax. Format compatibility does not guarantee identical browser, component-retrieval, or filesystem capabilities in every Agent.
 
 ### 2. Invoke it explicitly
 
-In an Agent environment that supports Skills, enter:
+Codex：
 
 ```text
 $vibe-upgrader
 ```
 
-Installing the Skill does not allow it to intervene in unrelated frontend work. The full workflow starts only when explicitly invoked.
+Claude Code：
 
+```text
+/vibe-upgrader
+```
+
+Installing the Skill does not allow it to intervene in unrelated frontend work. The full workflow starts only when explicitly invoked.
 ### 3. Describe the upgrade
 
-Use these five fields for a more reliable result:
+Use these five fields for a more reliable result. The example below uses Codex; replace the first line with `/vibe-upgrader` in Claude Code:
 
 ```text
 $vibe-upgrader
@@ -119,13 +142,21 @@ Acceptance: clear desktop and mobile flows, keyboard access, passing build, and 
 macOS / Linux:
 
 ```bash
-git -C ~/.codex/skills/vibe-upgrader pull --ff-only
+# Codex
+git -C ~/.agents/skills/vibe-upgrader pull --ff-only
+
+# Claude Code
+git -C ~/.claude/skills/vibe-upgrader pull --ff-only
 ```
 
-Windows PowerShell:
+Windows PowerShell：
 
 ```powershell
-git -C "$env:USERPROFILE\.codex\skills\vibe-upgrader" pull --ff-only
+# Codex
+git -C "$env:USERPROFILE\.agents\skills\vibe-upgrader" pull --ff-only
+
+# Claude Code
+git -C "$env:USERPROFILE\.claude\skills\vibe-upgrader" pull --ff-only
 ```
 
 </details>
@@ -168,17 +199,8 @@ Do not integrate it into the production page until I approve it.
 
 ## How it works
 
-```mermaid
-flowchart LR
-    A["1. Understand the page"] --> B{"2. Choose a track"}
-    B -->|Standard| C["3. Controlled implementation"]
-    B -->|Experimental| D["3. Isolated prototype"]
-    C --> E["4. Verify and deliver"]
-    D --> F{"Human visual gate"}
-    F -->|approved| E
-    F -->|revise_once| D
-    F -->|rejected| G["Keep production unchanged"]
-```
+![Vibe-Upgrader four-step workflow](./docs/media/workflow-overview-en.svg?v=20260724)
+
 
 The formal `decision_task` 3.0 records permission mode, upgrade track, provenance, component decisions, prototype status, and verification boundaries. It makes the reasoning, implementation scope, and evidence inspectable instead of leaving only a page that looks different.
 
@@ -195,14 +217,14 @@ The Showcase uses hands-on demonstrations to explain four things:
 3. When to choose Standard or Experimental;
 4. How a real request becomes a verifiable delivery.
 
-![Drag to compare the interface before and after the upgrade](./docs/media/showcase_interaction.gif)
+![Drag to compare the interface before and after the upgrade](./docs/media/showcase_interaction.gif?v=20260724)
 
 <details>
 <summary>View desktop and mobile screenshots</summary>
 
-![Showcase desktop](./docs/media/showcase_desktop.png)
+![Showcase desktop](./docs/media/showcase_desktop.png?v=20260724)
 
-![Showcase mobile](./docs/media/showcase_mobile.png)
+![Showcase mobile](./docs/media/showcase_mobile.png?v=20260724)
 
 </details>
 
@@ -228,7 +250,7 @@ All people, scenes, and profile-like material in this case are fictional AIGC-ge
 ```text
 vibe-upgrader/
 ├── SKILL.md          # Skill entry point and track routing
-├── agents/           # Agent-facing metadata
+├── agents/           # Optional Codex / OpenAI metadata; SKILL.md remains the core entry
 ├── scripts/          # Decision, retrieval, installation, and search helpers
 ├── references/       # Protocol, provenance boundaries, and verification guidance
 ├── assets/           # Redistributable aliases only; local corpus excluded
@@ -238,12 +260,12 @@ vibe-upgrader/
 
 ## Requirements and compatibility
 
-- Codex or another Agent environment that supports Skills and explicit invocation.
-- The core Skill does not require Node.js.
-- Python **3.10+** is required for optional helper scripts and validation tools.
+- The core layout follows the open [Agent Skills specification](https://agentskills.io/specification), with a standard `SKILL.md` entry point.
+- [Codex](https://developers.openai.com/codex/skills) uses `.agents/skills` and supports explicit `$vibe-upgrader` invocation.
+- [Claude Code](https://code.claude.com/docs/en/skills) uses `.claude/skills` and supports explicit `/vibe-upgrader` invocation.
+- Other clients that implement Agent Skills or can load `SKILL.md` can reuse the core Skill; available tools and invocation syntax remain client-specific.
+- The core instructions do not require Node.js. Python **3.10+** is required for optional helper scripts and validation tools.
 - Node.js is used only when the user opts into a compatible component CLI or Registry workflow.
-- Windows, macOS, and Linux use portable repository-relative paths.
-
 ## License and third-party boundaries
 
 Vibe-Upgrader's original code and documentation are released under the [MIT License](./LICENSE).
